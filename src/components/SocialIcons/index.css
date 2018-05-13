@@ -1,0 +1,32 @@
+.social-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.icon-wrapper {
+    margin: 0 10px;
+}
+
+.icon {
+    background-image: url("./icons.jpg");
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-size: 250px;
+}
+
+.instagram-icon {
+    background-position: -34px -121px;
+}
+
+.youtube-icon {
+    background-position: 80px -121px;
+}
+
+.facebook-icon {
+    background-position: -34px -57px;
+}

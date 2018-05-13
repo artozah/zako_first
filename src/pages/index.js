@@ -1,12 +1,19 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Player from '../components/Player'
+import Poster from '../components/Poster'
+import SocialFeeds from '../components/SocialFeeds'
 
 const IndexPage = ({data}) => (
   <div style={{textAlign: 'center'}}>
-    <h1>Hi!</h1>
     {data.allMarkdownRemark.edges.map(post => (
         <div key={post.node.id}>
-            <p>Welcome to <b>{post.node.frontmatter.title}</b> site.</p>
+            <hr style={{ margin: 40}} />
+            <Poster />
+            <hr style={{ margin: 40}} />
+            <Player url={post.node.frontmatter.url} playlist={post.node.frontmatter.list} />
+            <hr style={{ margin: 40}} />
+            <SocialFeeds />
         </div>
     ))}
   </div>
@@ -20,6 +27,8 @@ export const pageQuery = graphql`
                     id
                     frontmatter {
                         title
+                        url
+                        list
                     }
                 }
             }
